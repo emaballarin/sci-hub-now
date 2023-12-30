@@ -2,7 +2,7 @@ import { venueAbbreviations } from "./config.js";
 
 const metadataRegex = new RegExp(/.*?\|([^\|]+?)\|([^\|]+?)\|[^\|]*?\|[^\|]*?\|[^\|]*?\|([^\|]+?)\|[^\|]*?\|([^\|]*?)\|([^\|]*)/);
 
-const EMAIL = 'gchenfc.developer@gmail.com';
+const EMAIL = 'emanuele@ballarin.cc';
 function getApiQueryUrl(doi, email = EMAIL) {
   return 'https://doi.crossref.org/servlet/query' + '?pid=' + email + '&id=' + doi;
 }

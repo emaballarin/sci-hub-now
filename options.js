@@ -262,7 +262,7 @@ function checkServer(url, timeout) {
 }
 
 // Fetch data from database
-const databaseRoot = "https://raw.githubusercontent.com/gchenfc/sci-hub-now/master/data/";
+const databaseRoot = "https://raw.githubusercontent.com/emaballarin/sci-hub-now/master/data/";
 // const databaseRoot = "data/"; // For local testing
 // fetch urls
 var links;

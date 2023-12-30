@@ -2,16 +2,15 @@
   "manifest_version": 3,
   "name": "Sci-Hub X Now!",
   "short_name": "sci-hub-x-now",
-  "version": "0.2.2",
-  "author": "Gerry Chen and Orçun Özdemir and Lucas Sterzinger",
-  "homepage_url": "https://github.com/gchenfc/sci-hub-now",
-  "description": "Free access to academic papers with just a single click via sci-hub!",
+  "version": "0.2.4",
+  "author": "Gerry Chen and Orçun Özdemir and Lucas Sterzinger and Emanuele Ballarin",
+  "homepage_url": "https://github.com/emaballarin/sci-hub-now",
+  "description": "Free access to academic papers with just a single click via sci-hub! Updated version for Mozilla Firefox.",
   "icons": {
     "48": "icons/48x48.png",
     "96": "icons/96x96.png"
   },
   "action": {
-    "browser_style": true,
     "default_icon": {
       "48": "icons/48x48.png",
       "96": "icons/96x96.png"
@@ -54,12 +53,17 @@
     "*://*/*"
   ],
   "background": {
-    "service_worker": "service_worker.js",
+    "scripts": ["service_worker.js"],
     "type": "module"
   },
   "options_page": "options.html",
   "options_ui": {
-    "page": "options.html",
-    "browser_style": true
+    "page": "options.html"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "sci-hub-now@emaballarin",
+      "strict_min_version": "112.0"
+    }
   }
 }

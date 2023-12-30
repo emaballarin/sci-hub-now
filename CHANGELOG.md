@@ -2,12 +2,24 @@
 
 ## TODO
 
-- [ ] Upgrade to manifest v3
 - [ ] Custom auto-naming formats
 - [ ] Better journal/venue abbreviations
 - [ ] Better `shorttitles` in metadata
 - [ ] Custom email address to use with doi.crossref.org
 - [ ] Test unreleased changes on firefox & edge, and also check permissions differences amongst different browsers
+
+## v0.2.4
+
+### Modified
+* Deliberately restricted compatibility to Mozilla Firefox
+* Tentatively migrated manifest to version 3.
+
+### Bugfixes
+* Fixed manifest-related warnings for version >=2.
+
+## v0.2.3
+
+Skipped.
 
 ## v0.2.2
 

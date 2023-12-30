@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 <html>
+
   <head>
     <style>
-      table, th, td {
+      table,
+      th,
+      td {
         border: 1px solid black;
         border-collapse: collapse;
       }
-      td, th {
-        border:  1px solid;
+
+      td,
+      th {
+        border: 1px solid;
         padding: 0px 10px;
       }
+
       .option {
         display: flex;
         flex-direction: row;
@@ -17,21 +23,25 @@
         align-items: center;
         margin: 0.5em 0;
       }
+
       .separator {
         display: flex;
         align-items: center;
         text-align: center;
         margin: 1em 0;
       }
+
       .separator::before,
       .separator::after {
         content: '';
         flex: 1;
         border-bottom: 1px solid #000;
       }
+
       .separator:not(:empty)::before {
         margin-right: .25em;
       }
+
       .separator:not(:empty)::after {
         margin-left: .25em;
       }
@@ -58,44 +68,52 @@
         border: 1px solid #888;
         width: 80%;
       }
+
     </style>
   </head>
+
   <body>
     <h1>Sci-hub X Now!</h1>
     <div class="separator">Settings (hover for descriptions)</div>
     <div class="option">
-      <span style="margin-right: 1em;" title="The top level domain for sci-hub.  Since sci-hub mirrors are frequently taken down, you can change this to a working link.  Note: you must include the https:// and trailing /">
+      <span style="margin-right: 1em;"
+        title="The top level domain for sci-hub.  Since sci-hub mirrors are frequently taken down, you can change this to a working link.  Note: you must include the https:// and trailing /">
         Sci-Hub url:
       </span>
-      <input type="text" id="url"/>
+      <input type="text" id="url" />
       <!-- <button type="button" id="autofetch">Auto-fetch</button> -->
     </div>
     <div class="option">
-      <input type="checkbox" id="autodownload"/>
-      <span style="margin-left: 0.5em;" title="Automatically downloads the pdf in one click instead of just redirecting to sci-hub.">
+      <input type="checkbox" id="autodownload" />
+      <span style="margin-left: 0.5em;"
+        title="Automatically downloads the pdf in one click instead of just redirecting to sci-hub.">
         Auto-download pdf's <sup>1</sup>
       </span>
     </div>
     <div class="option">
-      <input type="checkbox" id="autoname"/>
-      <span style="margin-left: 0.5em;" title="Automatically names downloaded pdf's with the naming convention LastnameYearJournal_shorttitle.pdf.  This setting only applies if Auto-download is turned on.">
+      <input type="checkbox" id="autoname" />
+      <span style="margin-left: 0.5em;"
+        title="Automatically names downloaded pdf's with the naming convention LastnameYearJournal_shorttitle.pdf.  This setting only applies if Auto-download is turned on.">
         Auto-name downloaded pdf's (beta) <sup>2</sup>
       </span>
     </div>
     <div class="option">
-      <input type="checkbox" id="newtab"/>
-      <span style="margin-left: 0.5em;" title="Opens sci-hub in a new tab instead of the current tab.  This setting only applies if Auto-download is turned off.">
+      <input type="checkbox" id="newtab" />
+      <span style="margin-left: 0.5em;"
+        title="Opens sci-hub in a new tab instead of the current tab.  This setting only applies if Auto-download is turned off.">
         Open in new tab
       </span>
     </div>
     <div class="option">
-      <input type="checkbox" id="autocheck" checked="true"/>
-      <span style="margin-left: 0.5em;" title="Automatically check if the sci-hub mirror is down each time you click the extension">
+      <input type="checkbox" id="autocheck" checked="true" />
+      <span style="margin-left: 0.5em;"
+        title="Automatically check if the sci-hub mirror is down each time you click the extension">
         Auto-check sci-hub mirror on each paper request <sup>3</sup>
       </span>
     </div>
     <div style="font-size: 6pt; margin-bottom: 1em;">
-      <sup>1</sup> requires permissions to manage downloads and access <code>&lt;scihub-url&gt;</code> (to get the pdf link) <br />
+      <sup>1</sup> requires permissions to manage downloads and access <code>&lt;scihub-url&gt;</code> (to get the pdf
+      link) <br />
       <sup>2</sup> requires permissions to access <code>doi.crossref.org</code> for metadata lookup <br />
       <sup>3</sup> requires permissions to access <code>&lt;scihub-url&gt;</code>
     </div>
@@ -118,35 +136,28 @@
       <p style="background-color: yellow; float:left; text-align: center; width:80px;">likely working</p>
       <p style="background-color: pink; float:left; text-align: center; width:70px;">not working</p>
       <p style="background-color: #aaa; float:left; text-align: center; width:50px;">loading</p>
-    <div style="clear:both"></div>
-    <hr />
-    <div>
-      <p>
-        Please consider donating $0.50 via <a target="_blank" rel="noopener noreferrer" href="https://venmo.com/u/sci-hub-x-now"><img width="20" alt="venmo" src="icons/venmo-icon.svg" /></a>.
-      </p>
-      <p>
-        Please visit the <a href="https://github.com/gchenfc/sci-hub-now/issues">github</a> to give feedback.
-      </p>
-    </div>
+      <div style="clear:both"></div>
+      <hr />
 
-    <!-- We use modal as an alternative to `alert` -->
-    <div class="modal" tabindex="-1" role="dialog">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title">Alert</h2>
-          </div>
-          <div class="modal-body" id="error-message" style="margin: 20px 0;">
-            <p>Modal body text goes here.</p>
-          </div>
-          <div class="modal-footer">
-            <!-- <button type="button" onclick="document.querySelector('.modal').style.display='none';"> -->
-            <button id="close-modal">Close</button>
+      <!-- We use modal as an alternative to `alert` -->
+      <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title">Alert</h2>
+            </div>
+            <div class="modal-body" id="error-message" style="margin: 20px 0;">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <!-- <button type="button" onclick="document.querySelector('.modal').style.display='none';"> -->
+              <button id="close-modal">Close</button>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
   </body>
   <script type="module" src="options.js"></script>
+
 </html>
