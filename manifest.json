@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Sci-Hub X Now!",
   "short_name": "sci-hub-x-now",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "author": "Gerry Chen and Orçun Özdemir and Lucas Sterzinger and Emanuele Ballarin",
   "homepage_url": "https://github.com/emaballarin/sci-hub-now",
   "description": "Free access to academic papers with just a single click via sci-hub! Updated version for Mozilla Firefox.",
